@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "http-server -p 8080 -w -c-1"
+    "dev": "http-server -p 8896 -w -c-1"
   },
   "author": "",
   "license": "ISC",
