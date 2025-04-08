@@ -131,17 +131,11 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(performRandomZoom, 1500);
   }
 
-  // Function to reset the map to initial view
-  function resetMapView() {
-    // Reset to initial zoom and center
-    map.setZoomAndCenter(4.6, chinaCenter, false);
-  }
-
   // Start button click handler
   function handleStartClick() {
     if (!chinaBoundary) return;
     if (finished) {
-      resetMapView();
+      map.setFitView(chinaBoundary);
       finished = false;
       document.getElementById("startButton").textContent = "开始";
       return;
