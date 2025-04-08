@@ -39,6 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (status === "complete") {
           const boundaries = result.districtList[0].boundaries;
           if (boundaries) {
+            for (var i = 0; i < boundaries.length; i += 1) {//构造MultiPolygon的path
+                boundaries[i] = [boundaries[i]]
+            }
             chinaBoundary = new AMap.Polygon({
               path: boundaries,
               fillOpacity: 0,
@@ -47,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             map.add(chinaBoundary);
+            map.setFitView(chinaBoundary);
           }
         }
       });
@@ -133,10 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
     map.setZoomAndCenter(4.6, chinaCenter, false);
   }
 
-  // 开始 button click handler
-  function handle开始Click() {
+  // Start button click handler
+  function handleStartClick() {
     if (!chinaBoundary) return;
-    console.log("finished", finished, isRunning);
     if (finished) {
       resetMapView();
       finished = false;
@@ -144,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     if (isRunning) {
-      // 停止 the exploration
+      // Stop the exploration
       isRunning = false;
       document.getElementById("startButton").textContent = "开始";
     } else {
@@ -158,5 +161,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initMap();
   document
     .getElementById("startButton")
-    .addEventListener("click", handle开始Click);
+    .addEventListener("click", handleStartClick);
 });
