@@ -1,0 +1,14 @@
+{
+  "name": "ramdom-map",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server -p 8080 -w -c-1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Map Explorer</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script> 
+      window._AMapSecurityConfig = {
+        securityJsCode: '55ddb4895b774c5c3ac0f0c529ac00b6',
+      }
+    </script>
+    <!-- <script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=4270aceeb31d051d8649181db1aa7acb"></script> -->
+    <script type="text/javascript"
+    src="//webapi.amap.com/maps?v=2.0&key=4270aceeb31d051d8649181db1aa7acb&plugin=AMap.DistrictSearch"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="mapContainer"></div>
+        <button id="startButton">开始</button>
+    </div>
+    <script src="src/app.js"></script>
+</body>
+</html> 
