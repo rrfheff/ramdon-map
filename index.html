@@ -17,7 +17,22 @@
 <body>
     <div class="container">
         <div id="mapContainer"></div>
-        <button id="startButton">开始</button>
+        <div class="controls">
+            <select id="modeSelector">
+                <option value="random">完全随机</option>
+                <option value="cities">著名城市</option>
+            </select>
+            
+            <span id="cityLevelContainer" style="display: none;">
+                <select id="cityLevelSelector">
+                    <option value="big">大城市</option>
+                    <option value="small">小城市</option>
+                    <option value="county">县城/特色小镇</option>
+                </select>
+            </span>
+            
+            <button id="startButton">开始</button>
+        </div>
     </div>
     <script src="src/app.js"></script>
 </body>
